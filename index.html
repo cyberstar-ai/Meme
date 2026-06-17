@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meme Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Meme Studio</h1>
+      <p class="subtitle">Create. Drag. Download. Heal.</p>
+      
+      <nav class="nav">
+        <button onclick="showTab('meme')" class="nav-btn active" id="memeTab">Create Meme</button>
+        <button onclick="showTab('about')" class="nav-btn" id="aboutTab">About This Project</button>
+      </nav>
+    </header>
+
+    <!-- Meme Tab -->
+    <div id="memeTabContent" class="tab-content">
+      <div class="main">
+        <div class="canvas-container">
+          <canvas id="memeCanvas" width="600" height="600"></canvas>
+        </div>
+
+        <div class="controls-panel">
+          <h2>Customize Your Meme</h2>
+          <label>Upload Image</label>
+          <input type="file" id="imageUpload" accept="image/*" style="width:100%; padding:8px; background:#2a2a2a; border-radius:8px;">
+
+          <div class="button-group">
+            <button id="randomTemplate" class="btn btn-secondary">Random Template</button>
+            <button id="reset" class="btn btn-secondary">Reset</button>
+          </div>
+
+          <label>Top Text</label>
+          <input type="text" id="topText" value="WHEN YOU">
+
+          <label>Bottom Text</label>
+          <input type="text" id="bottomText" value="GET YOUR HEART BROKEN">
+
+          <label>Font Size <span id="sizeValue">40</span>px</label>
+          <input type="range" id="fontSize" min="20" max="90" value="40">
+
+          <label>Text Color</label>
+          <input type="color" id="textColor" value="#ffffff">
+
+          <button id="download" class="btn btn-primary">Download Meme 📥</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Tab -->
+    <div id="aboutTabContent" class="tab-content" style="display: none;">
+      <div class="about-content">
+        <h2>About This Project</h2>
+        <p><strong>Created on June 17, 2026</strong></p>
+        
+        <div class="story">
+          <p>Hey... I made this meme generator tonight while thinking about you.</p>
+          <p>I was feeling a bit down after our talk, so I decided to turn those emotions into something creative. Coding this helped me process everything in a positive way.</p>
+          <p>You still mean a lot to me. I really enjoyed getting to know you, and I wish you all the best — genuinely.</p>
+          <p>Hope this little site brings a smile to your face. REMEMBER THAT I STILL LOVE YOU FAVOUR.</p>
+        </div>
+
+        <div class="photo-section">
+          <h3>For You</h3>
+          <img id="herPhoto" src="fav.jpg" alt="Her photo" style="max-width:100%; margin-top:15px; border-radius:12px;">
+        </div>
+
+        <button onclick="showTab('meme')" class="btn btn-primary" style="margin-top:30px;">Back to Meme Creator</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>Made with ❤️ while thinking of you</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
